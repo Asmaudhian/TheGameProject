@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    public float maxSpeed = 10;
-    public float speed = 5f;
-    public float jumpPower = 80f;
+    public float maxSpeed = 15;
+    public float speed = 8f;
+    public float jumpPower = 100f;
 
     public GameObject clonePlayer;
     private Vector3 pos;
@@ -58,6 +58,11 @@ public class Player : MonoBehaviour {
         if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow))
         {
             rb2d.AddForce(Vector2.up * jumpPower);
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            originalTransform.position = cloneTransform.position; // Error here, but why ? 
         }
     }
 
