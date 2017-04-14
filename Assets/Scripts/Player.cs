@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
     private Transform cloneTransform;
     // Declare a table of Vector3s with a size of 120 (60fps 2s)
     private Vector3[] posTable;
-    private int frameDelay = 120;
+    private int frameDelay = 240;
 
 
     public bool grounded;
@@ -55,7 +55,7 @@ public class Player : MonoBehaviour {
             transform.localScale = new Vector3(1, 1, 1);
         }
 
-        if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow))
+        if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow)) && gameObject.GetComponentInParent<Player>().grounded == true)
         {
             rb2d.AddForce(Vector2.up * jumpPower);
         }
