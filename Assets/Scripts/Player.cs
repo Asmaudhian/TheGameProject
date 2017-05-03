@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public float maxSpeed = 15;
-    public float speed = 8f;
+    public float speed = 10f;
     public float jumpPower = 100f;
 
     public GameObject clonePlayer;
@@ -19,7 +19,6 @@ public class Player : MonoBehaviour {
     // Declare a table of Vector3s with a size of 120 (60fps 2s)
     private Vector3[] posTable;
     private int frameDelay = 240;
-
 
     public bool grounded;
 
@@ -62,7 +61,12 @@ public class Player : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            originalTransform.position = cloneTransform.position; // Error here, but why ? 
+            originalTransform.position = cloneTransform.position;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+
         }
     }
 
